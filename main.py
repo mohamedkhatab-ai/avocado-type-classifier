@@ -85,7 +85,7 @@ def load_and_preprocess_data(filepath="avocado.csv"):
 # -------------------------------------------------------------
 def train_adaboost_model(X_train, y_train, X_test, y_test, class_names):
     """Trains and evaluates the AdaBoost Classifier."""
-    ada_clf = AdaBoostClassifier(n_estimators=100, random_state=42, algorithm="SAMME")
+    ada_clf = AdaBoostClassifier(n_estimators=n_estimators, random_state=42)
     ada_clf.fit(X_train, y_train)
 
     train_acc = accuracy_score(y_train, ada_clf.predict(X_train))

@@ -139,7 +139,7 @@ def train_models(df, features, n_estimators, epochs, lr):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # AdaBoost Training
-    ada_clf = AdaBoostClassifier(n_estimators=n_estimators, random_state=42, algorithm='SAMME')
+    ada_clf = AdaBoostClassifier(n_estimators=n_estimators, random_state=42)
     ada_clf.fit(X_train, y_train)
     ada_train_acc = accuracy_score(y_train, ada_clf.predict(X_train))
     ada_test_acc = accuracy_score(y_test, ada_clf.predict(X_test))
